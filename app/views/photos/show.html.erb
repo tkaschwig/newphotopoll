@@ -5,7 +5,7 @@
     <%= link_to 'Edit', edit_photo_path(@photo), :class => "btn" %>
   </div>
   <div class="img-polaroid">
-    <%= image_tag(@photo.picture_url) if @photo.picture.present? %>
+    <%= image_tag(@photo.picture.url) if @photo.picture.present? %>
   </div>
   <p class="photo-desc">
     <%= @photo.description %>

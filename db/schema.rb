@@ -11,14 +11,27 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130419133822) do
+ActiveRecord::Schema.define(:version => 20130420210221) do
+
+  create_table "carrier_wave_files", :force => true do |t|
+    t.string   "identifier"
+    t.string   "original_filename"
+    t.string   "content_type"
+    t.string   "size"
+    t.binary   "data"
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
+  end
 
   create_table "photos", :force => true do |t|
     t.string   "name"
     t.text     "description"
-    t.string   "picture"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",           :null => false
+    t.datetime "updated_at",           :null => false
+    t.string   "picture_file_name"
+    t.string   "picture_content_type"
+    t.integer  "picture_file_size"
+    t.datetime "picture_updated_at"
   end
 
 end
