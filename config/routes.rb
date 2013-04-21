@@ -1,5 +1,9 @@
 Newphotopoll::Application.routes.draw do
-  resources :photos
+  resources :photos do
+    collection do
+      match 'pictures/:id' => 'photos#picture'
+    end
+  end
   root :to => redirect('/photos')
 
   # The priority is based upon order of creation:

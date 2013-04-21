@@ -67,4 +67,8 @@ class PhotosController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def picture
+    send_data Photo.find(params[:id]).picture.file_contents params[:style]
+  end
 end

@@ -7,6 +7,7 @@ gem 'rails', '3.2.13'
 
 gem 'mysql'
 gem "paperclip", "~> 3.0"
+gem "paperclip_database", "~> 1.0"
 
 group :production do
   gem 'therubyracer'

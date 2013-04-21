@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130420210221) do
+ActiveRecord::Schema.define(:version => 20130421210849) do
 
   create_table "carrier_wave_files", :force => true do |t|
     t.string   "identifier"
@@ -32,6 +32,12 @@ ActiveRecord::Schema.define(:version => 20130420210221) do
     t.string   "picture_content_type"
     t.integer  "picture_file_size"
     t.datetime "picture_updated_at"
+  end
+
+  create_table "pictures", :force => true do |t|
+    t.integer "photo_id"
+    t.string  "style"
+    t.binary  "file_contents", :limit => 16777215
   end
 
 end
